@@ -17,7 +17,7 @@ export default function WeatherCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Weater Of Haryana
+            Weather Of {props.cityName}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Temperature: {props.temp} 
