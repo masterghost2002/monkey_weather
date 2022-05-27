@@ -4,14 +4,19 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-const imageLink = "https://19yw4b240vb03ws8qm25h366-wpengine.netdna-ssl.com/wp-content/uploads/5-Best-Free-and-Paid-Weather-APIs-2019-e1587582023501.png"
+import { Grid } from '@mui/material';
+import { Container } from '@mui/system';
+const imageLink = "https://i0.wp.com/codemyui.com/wp-content/uploads/2015/07/animated-weather-icons-in-css.gif?fit=880%2C440&ssl=1";
 export default function WeatherCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <>
+    <Container maxWidth="lg">
+    <Grid container spacing={0} columns={1}>
+    <Card sx={{ maxWidth: 350, maxHeight: 700}}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="250"
           image={imageLink}
           alt="green iguana"
         />
@@ -19,13 +24,16 @@ export default function WeatherCard(props) {
           <Typography gutterBottom variant="h5" component="div">
             Weather Of {props.cityName}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Temperature: {props.temp} 
-            <br></br>
-            Type: {props.type}
+          <Typography variant="body2" color="text.primary">
+            Temperature : {props.temp} C<br/>
+            Country : {props.countryName} <br/>
+            TimeZone : {props.timeZone} <br/>
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+    </Grid>
+    </Container>
+    </>
   );
 }
