@@ -7,12 +7,11 @@ export default function Weather(props) {
 
   const [useTemp, setTemp] = useState(0);
   const [cityKey, setCityKey] = useState(3099739);
+  //3099739
 
   const [countryName, setcountryName] = useState('India');
   const [timeZone, setTimeZone] = useState("Asia/Kolkata");
-  const [dateInfo, setDateInfo] = useState('2022-05-27T15:35:00+05:30');
-
-
+  const [imageType, setImageType] = useState('Day');
   // block for api keys and url to fetch
 
   // const apiKey = "0lOiuGFXOPnlXrGVatvupDjjaGVRdvG2"; // utuber api
@@ -39,8 +38,9 @@ export default function Weather(props) {
 
     // setting up the temperature fetched from the tempUrl {the key of the url which denote the city is fetch and set form city data}
     setTemp(parsedTempData[0].Temperature.Metric.Value);
-    setDateInfo(parsedTempData[0].LocalObservationDateTime);
-    // console.log(parsedTempData[0].LocalObservationDateTime);
+    if(parsedTempData[0].IsDayTime === false)
+      setImageType('Night');
+    else setImageType('Day');
 
   }, [urlTemp, urlCityInfo])
 
@@ -49,13 +49,13 @@ export default function Weather(props) {
   // useEffect hooks which runs on the change of cityKey updateInformation cityName
   useEffect(() => {
     updateInformation();
-  }, [urlTemp, updateInformation, props.cityName]);
+  }, [updateInformation]);
 
 
 
   return (
     <>
-      <WeatherCard temp={useTemp} cityName={props.cityName} countryName={countryName} timeZone={timeZone} dateInfo = {dateInfo} />
+      <WeatherCard temp={useTemp} cityName={props.cityName} countryName={countryName} timeZone={timeZone} imageType = {imageType}/>
     </>
   )
 }
