@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import NavBar from './components/NavBar';
 import Weather from './components/Weather';
 import Box from '@mui/material/Box'
+import { createTheme, ThemeProvider } from '@mui/material';
 function App() {
 
   // useState block    --> write use state hereonly
@@ -13,22 +14,19 @@ function App() {
     const cname = event.target.value;
     setCityName(cname);
   }
-
+  const [mode, setMode] = useState("light");
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    }
+  });
   return (
-    <>
-    <div
-      style={{ 
-        backgroundImage: `url("https://raw.githubusercontent.com/masterghost2002/monkey_weather/master/src/components/assets/Day.png")`,
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <NavBar handleOnChange={handleOnChange} />
-      <Box m = {1} p = {8}>
+    <ThemeProvider theme={darkTheme}>
+      <Box bgcolor={"background.default"} color={"text.primary"}>
+        <NavBar handleOnChange={handleOnChange} mode={mode} setMode={setMode}/>
         <Weather cityName={cityName} />
       </Box>
-      </div>
-    </>
+    </ThemeProvider>
   );
 }
 

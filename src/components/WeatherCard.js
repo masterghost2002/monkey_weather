@@ -10,9 +10,9 @@ export default function WeatherCard(props) {
   const imageLink = `https://raw.githubusercontent.com/masterghost2002/monkey_weather/master/src/components/assets/${props.imageType}.png`;
   return (
     <>
-      <Container maxWidth="lg" >
+      <Container maxWidth="lg">
         <Grid container spacing={0} columns={1}>
-          <Card sx={{ maxWidth: 350, Height: 'max' }}>
+          <Card sx={{ maxWidth:{xs:"95%", sm:"40%"}, minWidth:{xs:"70%", sm:"40%"}, Height: 'max', p:2, margin : 6 }}>
             <CardActionArea>
               <CardMedia
                 component="img"

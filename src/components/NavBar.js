@@ -8,7 +8,8 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 // import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -52,6 +53,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar(props) {
+  const changeMode = ()=>{
+    props.mode === "light"?props.setMode("dark"):props.setMode("light");
+  }
   return (
     <Box sx={{ flexGrow: 1}}>
       <AppBar position="static" color="warning">
@@ -72,6 +76,7 @@ export default function SearchAppBar(props) {
           >
             Monkey-Weather
           </Typography>
+          {props.mode === "light"?<DarkModeIcon onClick = {changeMode} sx={{margin:2}}/>:<LightModeIcon onClick = {changeMode} sx={{margin:2}}/>}
           <Search onChange={props.handleOnChange}>
             <SearchIconWrapper>
               <SearchIcon />
