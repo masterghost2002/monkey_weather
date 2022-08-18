@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Gumela;
+  src: url('fonts/Gumela.otf')
+}
+*{
+  font-family: 'Gumela';
+  font-weight: normal;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,60 @@
+@media only screen and (min-width: 1000px) {
+    .w-left{
+        position: fixed;
+    } 
+    .weather-brand{
+        font-size: 4rem;
+    }
+}
+@media only screen and (max-width: 1000px) { 
+    .weather-brand{
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+.card{
+    box-shadow: var(--boxShadow);
+    border: var(--black);
+}
+.form-control{
+    max-width: 70vw;
+}
+.search-btn{
+    height: 40px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--orange);
+    box-shadow: 0px 19px 60px rgba(238 146 9 /30%);
+}
+.search-btn:hover{
+    height: 40px;
+    margin: 10px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--orange);
+    box-shadow: 0px 19px 60px rgba(238 146 9 /60%);
+}
+.search-bar{
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 40px;
+    padding: 20px;
+    border: solid var(--black);
+}
+.search-bar:focus{
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 40px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: var(--boxShadow);
+}
+.card-title{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.list-group-item{
+    font-weight: normal;
+    font-size: 0.9rem;
+}

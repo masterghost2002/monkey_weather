@@ -1,0 +1,16 @@
+.navbar{
+    margin: 1rem;
+    border-radius: 30px;
+    box-shadow: 0px 19px 60px rgba(238 146 9 /30%);
+}
+.navbar-brand{
+    color: var(--black);
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.navbar-brand:hover{
+    color: var(--orange);
+}
+.nav-link:hover{
+    color: rgba(19,166,159,255);
+}
