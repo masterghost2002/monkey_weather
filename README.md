@@ -1,4 +1,6 @@
 
+#Note The accu weather api only work in local host  to better to build the app on local host to check the working of weather 
+
 <img width="949" alt="ss" src="https://user-images.githubusercontent.com/55751461/185280641-cd27607c-831c-45a0-84d0-81fe64ec8dec.png">
 
 # Getting Started with Create React App
